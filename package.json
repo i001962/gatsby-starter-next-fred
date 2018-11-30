@@ -42,6 +42,7 @@
     "gatsby-plugin-glamor": "next",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-typescript": "^2.0.0-rc.4",

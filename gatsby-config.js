@@ -5,7 +5,8 @@ module.exports = {
     disqus: `gatsby-typescript`
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `AuthorJson`
+    'MarkdownRemark.frontmatter.author': `AuthorJson`,
+    'FredData.series': `FredseriesJson.id`
   //  'FredData.series': `FredseriesJson.id`
   },
   plugins: [
@@ -25,7 +26,7 @@ module.exports = {
         file_type: 'json',
         frequency: 'm', //  Values: 'd', 'w', 'bw', 'm', 'q', 'sa', 'a', 'wef', 'weth', 'wew', 'wetu', 'wem', 'wesu', 'wesa', 'bwew', 'bwem'
         //    limit: "24",
-        observation_start: '2018-06-01' // 1776-07-04 (earliest available)
+        observation_start: '1970-06-01' // 1776-07-04 (earliest available)
         //    observation_end: "9999-12-31" // Default: 9999-12-31 (latest available)
         //    units: "lin" // One of the following: 'lin', 'chg', 'ch1', 'pch', 'pc1', 'pca', 'cch', 'cca', 'log'
       }
@@ -93,6 +94,7 @@ module.exports = {
     // html file so the site works offline and is otherwise
     // resistant to bad networks. Works with almost any
     // site!
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify` // Make sure to put last in the array
   ]
 };

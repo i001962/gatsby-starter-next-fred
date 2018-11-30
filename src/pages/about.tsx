@@ -238,7 +238,8 @@ query InterestRatePageQuery {
       fieldValue
       edges {
         node {
-          series
+          series{  title
+            frequency }
           value
           date
         }
