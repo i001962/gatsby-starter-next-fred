@@ -1,11 +1,8 @@
 import * as React from "react";
 import { Header, Container, Segment, Icon } from "semantic-ui-react";
 import {withLayout} from "../components/Layout";
-// import * as React from "react";
-// import { Header, Container, Segment, Icon } from "semantic-ui-react";
-// import { withLayout } from "../components/Layout";
 import { Chart } from "react-google-charts";
-import { graphql } from "gatsby";
+// import { graphql } from "gatsby";
 
 const data2 = [ ["Independant", "Dependant"] ];
 const options = {
@@ -25,33 +22,35 @@ const scatteroptions = {
   vAxis: { title: "Dependant" },
 };
 
- const AboutPage = ({ data }) => {
+const AboutPage = () => {
 
-    const data1 = [
-      ["Monthly"],
-    ];
-  // Linechart Data Prep
-    let timesthru = 0;
-    // For each data series grouped in graphql
-    data.allFredData.group.forEach(fseries => {
-    // (function(fseries) {
-      let i = 0;
-      data1[0].push(fseries.edges[0].node.series.title);
-      let chartdata = fseries.edges
-        .map(({ node }) => {
-          i++;
-          if (timesthru === 0) {
-            data1[i] = [node.date, parseFloat(node.value)];
-            data2[i] = [parseFloat(node.value)];
-        } else {
-            data1[i].push(parseFloat(node.value));
-            data2[i].push(parseFloat(node.value));
-          }
-        });
-      timesthru++;
-    });
-
-    options.title = JSON.stringify(data1[0]);
+ // const AboutPage = ({ data }) => {
+ //
+ //    const data1 = [
+ //      ["Monthly"],
+ //    ];
+ //  // Linechart Data Prep
+ //    let timesthru = 0;
+ //    // For each data series grouped in graphql
+ //    data.allFredData.group.forEach(fseries => {
+ //    // (function(fseries) {
+ //      let i = 0;
+ //      data1[0].push(fseries.edges[0].node.series.title);
+ //      let chartdata = fseries.edges
+ //        .map(({ node }) => {
+ //          i++;
+ //          if (timesthru === 0) {
+ //            data1[i] = [node.date, parseFloat(node.value)];
+ //            data2[i] = [parseFloat(node.value)];
+ //        } else {
+ //            data1[i].push(parseFloat(node.value));
+ //            data2[i].push(parseFloat(node.value));
+ //          }
+ //        });
+ //      timesthru++;
+ //    });
+ //
+ //    options.title = JSON.stringify(data1[0]);
 
     return (
     <Container>
@@ -74,32 +73,8 @@ const scatteroptions = {
           For any issues, any PR are welcoming
           <a href="https://github.com/fabien0102/gatsby-starter/issues" target="blank"> on this repository</a>
         </p>
-                        < Chart
-          chartType = "LineChart"
-          width = "100%"
-          height = "400px"
-          data = {data1}
-          options = {options }
-            />
-
-                          <Chart
-               chartType="Histogram"
-               width="60%"
-               height="300px"
-               data={data1}
-               options={optionsHisto}
-             />
-
-             <Chart
-          width={'600px'}
-          height={'400px'}
-          chartType="ScatterChart"
-          loader={<div>Loading Chart</div>}
-          data={data2}
-          options={scatteroptions}
-          rootProps={{ 'data-testid': '1' }}
-        />
-      </Segment>
+    
+        </Segment>
 
     </Container>
   );
@@ -107,23 +82,23 @@ const scatteroptions = {
 
 export default withLayout(AboutPage);
 
-export const query = graphql`
-query InterestRatePageQuery {
-   allFredData(sort: {order: ASC, fields: [date]}) {
-      group(field: series) {
-        fieldValue
-        totalCount
-        edges {
-          node {
-            id
-            date
-            value
-            series {
-              title
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+// query InterestRatePageQuery {
+//    allFredData(sort: {order: ASC, fields: [date]}) {
+//       group(field: series) {
+//         fieldValue
+//         totalCount
+//         edges {
+//           node {
+//             id
+//             date
+//             value
+//             series {
+//               title
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

@@ -5,8 +5,8 @@ module.exports = {
     disqus: `gatsby-typescript`
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `AuthorJson`,
-    'FredData.series': `FredseriesJson.id`
+    'MarkdownRemark.frontmatter.author': `AuthorJson`
+  //  'FredData.series': `FredseriesJson.id`
   },
   plugins: [
     // Expose `/data` to graphQL layer
