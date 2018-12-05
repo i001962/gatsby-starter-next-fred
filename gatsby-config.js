@@ -7,7 +7,7 @@ module.exports = {
   mapping: {
     'MarkdownRemark.frontmatter.author': `AuthorJson`,
     'FredData.series': `FredseriesJson.id`
-  //  'FredData.series': `FredseriesJson.id`
+    //  'FredData.series': `FredseriesJson.id`
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -19,16 +19,31 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-edgar', // 10ks are quarterly
+      options: {
+        fields: 'IncomeStatementConsolidated',
+        primarysymbols: ['MSFT', 'AAPL'], // 'CPIAUCNS', 'CPIMEDSL' ['PAYEMS', 'IC4WSA']
+        fiscalPeriod: '2017q1', // Will return all 10ks from this date to current
+      //  numPeriods: '3',
+        activecompanies: false, //  Values: 'd', 'w', 'bw', 'm', 'q', 'sa', 'a', 'wef', 'weth', 'wew', 'wetu', 'wem', 'wesu', 'wesa', 'bwew', 'bwem'
+        appkey: process.env.API_EDGAR,
+        deleted: 'false',
+        sortby: 'primarysymbol asc',
+        debug: false
+      }
+    },
+
+    {
       resolve: 'gatsby-source-fred',
       options: {
-        api_key: 'e81b1a03fecb3c05e91272f4b8063e47',
-        series_id: ['CPIAUCNS', 'CPIMEDSL'], // Gross National Product
+        api_key: process.env.API_FRED,
+        series_id: ['CPIAUCNS', 'CPIMEDSL'], // MCOILWTICO POILWTIUSDQ 'CPIAUCNS', 'CPIMEDSL' ['PAYEMS', 'IC4WSA']
         file_type: 'json',
-        frequency: 'm', //  Values: 'd', 'w', 'bw', 'm', 'q', 'sa', 'a', 'wef', 'weth', 'wew', 'wetu', 'wem', 'wesu', 'wesa', 'bwew', 'bwem'
+        frequency: 'q', //  Values: 'd', 'w', 'bw', 'm', 'q', 'sa', 'a', 'wef', 'weth', 'wew', 'wetu', 'wem', 'wesu', 'wesa', 'bwew', 'bwem'
         //    limit: "24",
-        observation_start: '1970-06-01' // 1776-07-04 (earliest available)
-        //    observation_end: "9999-12-31" // Default: 9999-12-31 (latest available)
-        //    units: "lin" // One of the following: 'lin', 'chg', 'ch1', 'pch', 'pc1', 'pca', 'cch', 'cca', 'log'
+        observation_start: '2012-01-01', // 1776-07-04 (earliest available)
+        observation_end: '2018-07-30', // Default: 9999-12-31 (latest available)
+        units: 'log' // One of the following: 'lin', 'chg', 'ch1', 'pch', 'pc1', 'pca', 'cch', 'cca', 'log'
       }
     },
     {
@@ -48,8 +63,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
+        plugins: [{
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 690,
