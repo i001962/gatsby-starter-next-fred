@@ -14,6 +14,23 @@ Welcome to gatsby-starter!
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique lacus vitae diam posuere faucibus. In hac habitasse platea dictumst. Ut id arcu non risus tincidunt commodo. Sed felis leo, pharetra non porttitor sodales, sodales dictum tortor. Vivamus vel neque interdum, egestas urna ac, finibus tellus. Morbi et rhoncus ligula, nec volutpat dolor. Cras efficitur ipsum a facilisis laoreet. Duis ut libero eget mi convallis maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque blandit sit amet erat vel semper.
 
+# Look at this Video:
+
+`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
+`youtube: https://www.youtube.com/watch?v=2Xc9gXyf2G4`
+`youtube: 2Xc9gXyf2G4`
+
+`vimeo: https://vimeo.com/5299404`
+`vimeo: 5299404`
+
+`videoPress: https://videopress.com/v/kUJmAcSf`
+`videoPress: kUJmAcSf`
+
+`twitch: https://player.twitch.tv/?channel=dakotaz`
+`twitch: https://player.twitch.tv/?autoplay=false&video=v273436948`
+`twitch: 273436948`
+`twitchLive: dakotaz`
+
 Ut egestas nisl in nunc accumsan, et interdum erat finibus. Fusce commodo ex nec imperdiet fermentum. Suspendisse non nulla eu eros rutrum vestibulum. Curabitur sit amet tortor venenatis, efficitur felis non, commodo urna. Aliquam ut auctor risus. Nullam nec felis pellentesque, tincidunt erat ut, aliquam neque. Ut elementum aliquam leo.
 
 Pellentesque sit amet purus a erat tincidunt elementum. Mauris lobortis egestas tellus, vel blandit tortor pellentesque at. Suspendisse potenti. Aenean vehicula, dolor ac interdum fermentum, velit elit fermentum nisi, in hendrerit nisi dolor semper est. Cras ullamcorper eros nec lacus maximus, a tincidunt ipsum feugiat. Quisque dignissim bibendum orci nec vestibulum. Phasellus accumsan eleifend posuere. Aliquam urna neque, auctor id accumsan nec, viverra vel tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis libero ut porttitor lobortis. Nam nec felis tellus. Praesent ipsum ipsum, consectetur non hendrerit non, egestas et felis.

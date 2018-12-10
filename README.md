@@ -25,7 +25,7 @@ $ gatsby new my-website https://github.com/fabien0102/gatsby-starter
 ```
 
 Run `npm start` (or press `F5` if you are on VSCode) to hot-serve your website on <http://localhost:8000>.
-
+API_EDGAR=xyz API_FRED=abc gatsby develop
 Run `npm run build` to create static site ready to host (`/public`)
 
 ## What's inside?
